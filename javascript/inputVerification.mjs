@@ -1,27 +1,17 @@
 import { gameSettings, validColors } from "./data.mjs"
 
 function verfiatePlayerInput(playerCombination) {
-    const playerCombinationInArray = combinationToArray(playerCombination)
-    console.log(playerCombinationInArray)
-    
-    if (!isCorrectLength(playerCombinationInArray)) {
+    if (!isCorrectLength(playerCombination)) {
         alert(`please choose ${gameSettings.combinationLength} colors`)
         return false
     }
     console.log(`is correct length`)
-    if (!isValidColors(playerCombinationInArray)) {
+    if (!isValidColors(playerCombination)) {
         alert(`please choose valid colors : ${validColors}`)
         return false
     }
     console.log(`is valid colors`)
     return true
-}
-
-
-
-function combinationToArray(myString) {
-    const myArray = myString.split(`,`) //later remplaced with buttons so we do not worry about bad player input for now
-    return myArray
 }
 
 function isCorrectLength(myArray) {
