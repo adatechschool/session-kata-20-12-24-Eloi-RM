@@ -9,7 +9,7 @@ function verifiatePlayerCombination(playerCombination) {
     wellPlaced = 0
     missplaced = 0
     
-    // for (const color of secretCombination) { //thx javascript :)
+    // for (const color of secretCombination) {
     //     tempSecretCombination.push(color)
     // }
 
@@ -27,7 +27,7 @@ function verifiatePlayerCombination(playerCombination) {
 
 //doesn't work because javascript hates me
 // function isPlayerCombinationTrue(myArray) {
-//     return myArray == secretCombination //???????????????????? javascript :)
+//     return myArray == secretCombination
 // }
 
 function howManyWellplaced(myArray) {
