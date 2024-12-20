@@ -1,28 +1,22 @@
-import { resultPgraph, inputArea, validColors } from "./data.mjs"
+import { resultPgraph, validColors } from "./data.mjs"
 
-function verfiatePlayerInput() {
-    const playerCode = getPlayerCombination()
-    console.log(playerCode)
+function verfiatePlayerInput(playerCombination) {
+    const playerCombinationInArray = combinationToArray(playerCombination)
+    console.log(playerCombinationInArray)
     
-    const playerCodeInArray = combinationToArray(playerCode)
-    console.log(playerCodeInArray)
-    
-    if (!isCorrectLength(playerCodeInArray)) {
+    if (!isCorrectLength(playerCombinationInArray)) {
         resultPgraph.innerText = `please choose 2 colors`
-        return
+        return false
     }
     console.log(`is correct length`)
-    if (!isValidColors(playerCodeInArray)) {
+    if (!isValidColors(playerCombinationInArray)) {
         resultPgraph.innerText = `please choose valid colors : ${validColors}`
-        return
+        return false
     }
     console.log(`is valid colors`)
 }
 
-function getPlayerCombination() {
-    const playerInput  = inputArea.value
-    return playerInput
-}
+
 
 function combinationToArray(myString) {
     const myArray = myString.split(`,`) //later remplaced with buttons so we do not worry about bad player input for now

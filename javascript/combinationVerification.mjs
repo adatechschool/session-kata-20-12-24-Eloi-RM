@@ -1,11 +1,13 @@
 import { secretCombination } from "./data.mjs";
 
 function verifiatePlayerCombination() {
-    return isPlayerCombinationTrue()
+    return isPlayerCombinationTrue(myArray)
 }
 
 function isPlayerCombinationTrue(myArray) {
-    return myArray == secretCombination
+    console.log(secretCombination)
+    console.log(myArray)
+    return myArray === secretCombination
 }
 
 export {
