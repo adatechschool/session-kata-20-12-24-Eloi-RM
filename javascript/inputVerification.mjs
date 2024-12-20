@@ -1,10 +1,10 @@
 import { resultPgraph, inputArea, validColors } from "./data.mjs"
 
 function verfiatePlayerInput() {
-    const playerCode = getPlayerCode()
+    const playerCode = getPlayerCombination()
     console.log(playerCode)
     
-    const playerCodeInArray = codeToArray(playerCode)
+    const playerCodeInArray = combinationToArray(playerCode)
     console.log(playerCodeInArray)
     
     if (!isCorrectLength(playerCodeInArray)) {
@@ -19,12 +19,12 @@ function verfiatePlayerInput() {
     console.log(`is valid colors`)
 }
 
-function getPlayerCode() {
+function getPlayerCombination() {
     const playerInput  = inputArea.value
     return playerInput
 }
 
-function codeToArray(myString) {
+function combinationToArray(myString) {
     const myArray = myString.split(`,`) //later remplaced with buttons so we do not worry about bad player input for now
     return myArray
 }

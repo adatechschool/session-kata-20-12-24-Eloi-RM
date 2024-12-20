@@ -10,8 +10,8 @@ const validColors = [
     `green`
 ]
 
-const secretCode = [`blue`, `red`]
+const secretCombination = [`blue`, `red`]
 
 export {
-    resultPgraph, inputArea, validateButton, triesPgraph, validColors, secretCode
+    resultPgraph, inputArea, validateButton, triesPgraph, validColors, secretCombination
 }
