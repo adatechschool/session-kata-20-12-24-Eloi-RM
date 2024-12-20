@@ -14,6 +14,7 @@ function verfiatePlayerInput(playerCombination) {
         return false
     }
     console.log(`is valid colors`)
+    return true
 }
 
 
