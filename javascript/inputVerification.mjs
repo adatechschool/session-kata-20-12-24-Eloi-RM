@@ -1,16 +1,16 @@
-import { gameSettings, resultPgraph, validColors } from "./data.mjs"
+import { gameSettings, validColors } from "./data.mjs"
 
 function verfiatePlayerInput(playerCombination) {
     const playerCombinationInArray = combinationToArray(playerCombination)
     console.log(playerCombinationInArray)
     
     if (!isCorrectLength(playerCombinationInArray)) {
-        resultPgraph.innerText = `please choose ${gameSettings.combinationLength} colors`
+        alert(`please choose ${gameSettings.combinationLength} colors`)
         return false
     }
     console.log(`is correct length`)
     if (!isValidColors(playerCombinationInArray)) {
-        resultPgraph.innerText = `please choose valid colors : ${validColors}`
+        alert(`please choose valid colors : ${validColors}`)
         return false
     }
     console.log(`is valid colors`)

@@ -6,14 +6,18 @@ const triesPgraph = document.querySelector(`#try`)
 const validColors = [
     `red`,
     `blue`,
+    `green`,
     `yellow`,
-    `green`
+    `magenta`,
+    `cyan`,
+    `white`,
+    `black`
 ]
 
-const secretCombination = [`blue`, `red`]
+const secretCombination = [`red`, `yellow`, `cyan`, `white`]
 
 const gameSettings = {
-    "combinationLength" : 2,
+    "combinationLength" : 4,
     "maxNumberOfTries" : 12,
     "playerNumberOfTries" : 0
 }
