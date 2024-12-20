@@ -1,9 +1,14 @@
-import { gameSettings, triesPgraph } from "./data.mjs"
+import { gameSettings, numberOfTriesPgraph, tryResultPgraph } from "./data.mjs"
 
 function displayNumberOfTries() {
-    triesPgraph.innerText = `Number of tries : ${gameSettings.playerNumberOfTries}`
+    numberOfTriesPgraph.innerText = `Number of tries : ${gameSettings.playerNumberOfTries}`
+}
+
+function displayTryResult() {
+    tryResultPgraph.innerText = `Well placed colors : ${gameSettings.tryResult[0]}
+                            Missplaced colors : ${gameSettings.tryResult[1]}`
 }
 
 export {
-    displayNumberOfTries
+    displayNumberOfTries, displayTryResult
 }

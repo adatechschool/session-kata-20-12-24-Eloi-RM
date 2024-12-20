@@ -1,32 +1,41 @@
-import { secretCombination } from "./data.mjs";
+import { gameSettings, secretCombination } from "./data.mjs";
 
-const result = []
 let wellPlaced  = 0
 let missplaced = 0
+// let tempSecretCombination = []
 
 function verifiatePlayerCombination(playerCombination) {
-    result.length = 0
+    gameSettings.tryResult.length = 0
     wellPlaced = 0
     missplaced = 0
-    if (isPlayerCombinationTrue(playerCombination)) {
+    
+    // for (const color of secretCombination) { //thx javascript :)
+    //     tempSecretCombination.push(color)
+    // }
+
+    howManyWellplaced(playerCombination)
+    gameSettings.tryResult.push(wellPlaced)
+    gameSettings.tryResult.push(missplaced)
+    console.log(gameSettings.tryResult)
+    
+    if (wellPlaced == gameSettings.combinationLength) {
         return true
     }
-    howManyWellplaced(playerCombination)
-    result.push(wellPlaced)
-    result.push(missplaced)
-    console.log(result)
-
+    
     return false
 }
 
-function isPlayerCombinationTrue(myArray) {
-    return myArray == secretCombination
-}
+//doesn't work because javascript hates me
+// function isPlayerCombinationTrue(myArray) {
+//     return myArray == secretCombination //???????????????????? javascript :)
+// }
 
 function howManyWellplaced(myArray) {
     for (let i = 0; i < myArray.length; i++){
         if (myArray[i] == secretCombination[i]) {
             wellPlaced += 1
+            // tempSecretCombination.splice(i, i+1, ``)
+            // console.log(tempSecretCombination)
             console.log(`${myArray[i]} is well placed`)
         } else {
             isMissplaced(myArray[i])
@@ -35,6 +44,7 @@ function howManyWellplaced(myArray) {
 }
 
 function isMissplaced(myString) {
+    // for (const color of tempSecretCombination) {
     for (const color of secretCombination) {
         if (myString == color) {
             missplaced += 1
@@ -43,6 +53,7 @@ function isMissplaced(myString) {
         }
     }
 }
+
 export {
     verifiatePlayerCombination
 }
