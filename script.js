@@ -1,5 +1,6 @@
 import { verifiatePlayerCombination } from "./javascript/combinationVerification.mjs"
-import { inputArea, resultPgraph, validateButton } from "./javascript/data.mjs"
+import { gameSettings, inputArea, resultPgraph, validateButton } from "./javascript/data.mjs"
+import { displayNumberOfTries } from "./javascript/display.mjs"
 import { verfiatePlayerInput } from "./javascript/inputVerification.mjs"
 
 function getPlayerCombination() {
@@ -15,11 +16,19 @@ function gameTurn() {
         return
     }
 
+    gameSettings.playerNumberOfTries += 1
+
+    displayNumberOfTries()
+
     if (verifiatePlayerCombination(playerCombination)) {
         resultPgraph.innerText = `you win`
-    } else {
-        //display
+        validateButton.disabled = true
+    } else if (gameSettings.playerNumberOfTries >= gameSettings.maxNumberOfTries) {
+        resultPgraph.innerText = `you lose`
+        validateButton.disabled = true
     }
+
+    
 }
 
 validateButton.addEventListener(`click`, ()=> {

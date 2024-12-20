@@ -12,6 +12,12 @@ const validColors = [
 
 const secretCombination = [`blue`, `red`]
 
+const gameSettings = {
+    "combinationLength" : 2,
+    "maxNumberOfTries" : 12,
+    "playerNumberOfTries" : 0
+}
+
 export {
-    resultPgraph, inputArea, validateButton, triesPgraph, validColors, secretCombination
+    resultPgraph, inputArea, validateButton, triesPgraph, validColors, secretCombination, gameSettings
 }
